@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Black Polo T-Shirt",
+    "image": "./images/t-shirt-1",
+    "price": 20.5
+  },
+  {
+    "id": 2,
+    "name": "White Polo T-Shirt",
+    "image": "./images/t-shirt-5",
+    "price": 25.5
+  },
+  {
+    "id": 3,
+    "name": "Blue Polo T-Shirt",
+    "image": "./images/t-shirt-2",
+    "price": 24.7
+  },
+  {
+    "id": 4,
+    "name": "Gray Polo T-Shirt",
+    "image": "./images/t-shirt-4",
+    "price": 28.2
+  },
+  {
+    "id": 5,
+    "name": "Full Sleeve T-Shirt",
+    "image": "./images/t-shirt-6",
+    "price": 33.5
+  },
+  {
+    "id": 6,
+    "name": "Nevy Blue T-Shirt",
+    "image": "./images/t-shirt-3",
+    "price": 22.5
+  },
+  {
+    "id": 7,
+    "name": "Sky Blue T-Shirt",
+    "image": "./images/t-shirt-7",
+    "price": 30.3
+  }
+]

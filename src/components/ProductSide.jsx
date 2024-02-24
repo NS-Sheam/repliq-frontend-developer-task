@@ -1,8 +1,9 @@
-import { Button, Flex } from "antd";
-import { BsThreeDotsVertical } from "react-icons/bs";
+
 import SearchBar from "./SearchBar";
 import { useState } from "react";
 import AllCategories from "./AllCategories";
+import ProductCards from "./ProductCards";
+import SlicedCategories from "./SlicedCategories";
 const ProductSide = () => {
     const [visibleCategories, setVisibleCategories] = useState(false)
     const categories = [
@@ -13,38 +14,15 @@ const ProductSide = () => {
             className=""
         >
             <SearchBar />
-            <Flex
-                justify="center"
-                align="center"
-                gap={16}
-                className="relative"
-
-            >
-                {
-                    categories.slice(0, 4).map((category, index) => {
-                        return (
-                            <div
-                                key={index}>
-                                <Button
-
-                                >{category}</Button>
-                            </div>
-                        )
-                    })
-                }
-                <div>
-                    <BsThreeDotsVertical
-                        onClick={() => setVisibleCategories(true)}
-                        className="cursor-pointer"
-                    />
-                </div>
-            </Flex>
+            <SlicedCategories categories={categories} setVisibleCategories={setVisibleCategories} />
 
             <div
-                className={`${visibleCategories ? "" : "hidden"} absolute bg-white right-0 top-0 h-screen px-4`}
+                className={`${visibleCategories ? "" : "hidden"} absolute bg-white right-0 top-0 h-screen px-4 z-10`}
             >
                 <AllCategories categories={categories} setVisibleCategories={setVisibleCategories} />
             </div>
+            <ProductCards />
+
 
         </div>
     );

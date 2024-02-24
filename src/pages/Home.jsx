@@ -10,15 +10,13 @@ const Home = () => {
             justify="center" align="start" style={{ height: "100%" }}>
             <Col
                 span={24}
-                order={2}
-                md={{ span: 12, order: 1 }}
+                md={{ span: 12 }}
             >
                 <LeftContainer />
             </Col>
             <Col
-                order={1}
                 span={24}
-                md={{ span: 12, order: 2 }}
+                md={{ span: 12 }}
             >
                 <ProductSide />
             </Col>

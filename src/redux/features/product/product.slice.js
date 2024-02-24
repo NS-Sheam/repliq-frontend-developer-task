@@ -6,8 +6,11 @@ const productSlice = createSlice({
     products: [],
   },
   reducers: {
-    addProduct: (state, action) => {
-      state.products.push(action.payload);
+    addProduct: (state, { payload }) => {
+      const product = state.products.find((product) => product.id === payload.id);
+      if (!product) {
+        state.products.push({ ...payload, quantity: 1 });
+      }
     },
     removeProduct: (state, action) => {
       state.products = state.products.filter((product) => product.id !== action.payload);

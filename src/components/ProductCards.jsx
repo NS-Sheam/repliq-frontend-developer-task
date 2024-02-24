@@ -44,11 +44,11 @@ const ProductCards = () => {
                                     style={{ width: "100%", height: "140px" }}
                                     alt={product?.name} src={product?.image} />}
                             >
-                                <h4>{product.name}</h4>
+                                <h4 className='text-center text-xl'>$ {product.price}</h4>
                                 <Divider
-                                    style={{ margin: "10px 0" }}
+                                    style={{ margin: "5px 0" }}
                                 />
-                                <p>{product.price}</p>
+                                <p className='text-center text-xs'>{product.name}</p>
                             </Card>
                         </Col>
                     )

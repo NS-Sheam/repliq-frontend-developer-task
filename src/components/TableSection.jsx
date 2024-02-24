@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { removeProduct, updateQuantity } from '../redux/features/product/product.slice';
 import { RiDeleteBinLine } from 'react-icons/ri';
 import { Table } from 'antd';
-
+import TotalSection from './TotalSection';
+import FooterSection from './FooterSection';
 const TableSection = () => {
     const dispatch = useDispatch();
 
@@ -30,7 +31,7 @@ const TableSection = () => {
             title: 'Price',
             dataIndex: 'price',
             key: 'price',
-            render: (item) => <p>{item.toFixed(2)}</p>,
+            render: (item) => <p>$ {item.toFixed(2)}</p>,
         },
 
         {
@@ -57,7 +58,7 @@ const TableSection = () => {
             title: 'Total Price',
             key: 'index',
             render: (_, record) => (
-                <p>{(record.price * record.quantity).toFixed(2)}</p>
+                <p>$ {(record.price * record.quantity).toFixed(2)}</p>
             ),
         },
         {
@@ -70,14 +71,20 @@ const TableSection = () => {
             />,
         },
     ];
+
     return (
-        <Table
-            locale={{ emptyText: "No products added" }}
-            showHeader={false}
-            columns={columns} dataSource={products}
-            pagination={false}
-            scroll={{ x: 500 }}
-        />
+        <>
+            <Table
+                locale={{ emptyText: "No products added" }}
+                showHeader={false}
+                columns={columns} dataSource={products}
+                pagination={false}
+                scroll={{ x: 500 }}
+            />
+            <TotalSection />
+            <FooterSection />
+
+        </>
     )
 };
 

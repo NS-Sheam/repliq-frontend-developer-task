@@ -1,7 +1,7 @@
 import { Button, Flex } from 'antd';
 import { BsThreeDotsVertical } from 'react-icons/bs';
 
-const SlicedCategories = ({ categories, setVisibleCategories }) => {
+const SlicedCategories = ({ categories, setVisibleCategories, setBgBlur }) => {
     return (
         <Flex
             justify="end"
@@ -25,7 +25,10 @@ const SlicedCategories = ({ categories, setVisibleCategories }) => {
             }
             <div>
                 <BsThreeDotsVertical
-                    onClick={() => setVisibleCategories(true)}
+                    onClick={() => {
+                        setVisibleCategories(true)
+                        setBgBlur(true)
+                    }}
                     className="cursor-pointer"
                 />
             </div>

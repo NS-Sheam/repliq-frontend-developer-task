@@ -18,7 +18,7 @@ const productSlice = createSlice({
     updateQuantity: (state, action) => {
       const { id, quantity } = action.payload;
       const product = state.products.find((product) => product.id === id);
-      if (product) {
+      if (product && quantity > 0) {
         product.quantity = quantity;
       }
     },
